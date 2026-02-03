@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | Document | Purpose |
 |----------|---------|
 | `docs/ui.md` | UI component standards and date formatting rules |
+| `docs/data-fetching.md` | Data fetching patterns and user data isolation |
 
 Always check these docs before implementing features to ensure consistency across the codebase.
 
