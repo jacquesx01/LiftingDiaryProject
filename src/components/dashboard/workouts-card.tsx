@@ -1,11 +1,14 @@
 import { format } from "date-fns";
+import Link from "next/link";
 import {
   Card,
+  CardAction,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 interface WorkoutExercise {
   id: number;
@@ -41,7 +44,7 @@ function formatDate(date: Date): string {
 export function WorkoutsCard({ selectedDate, workouts }: WorkoutsCardProps) {
   const totalExercises = workouts.reduce(
     (acc, workout) => acc + workout.workoutExercises.length,
-    0
+    0,
   );
 
   return (
@@ -51,6 +54,11 @@ export function WorkoutsCard({ selectedDate, workouts }: WorkoutsCardProps) {
         <CardDescription>
           {totalExercises} exercise{totalExercises !== 1 && "s"} logged
         </CardDescription>
+        <CardAction>
+          <Button asChild size="sm">
+            <Link href="/dashboard/workout/new">New Workout</Link>
+          </Button>
+        </CardAction>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
@@ -69,7 +77,9 @@ export function WorkoutsCard({ selectedDate, workouts }: WorkoutsCardProps) {
                     key={workoutExercise.id}
                     className="border-b pb-4 last:border-b-0 last:pb-0"
                   >
-                    <p className="font-medium">{workoutExercise.exercise.name}</p>
+                    <p className="font-medium">
+                      {workoutExercise.exercise.name}
+                    </p>
                     <div className="mt-2 space-y-1">
                       {workoutExercise.sets.map((set) => (
                         <p

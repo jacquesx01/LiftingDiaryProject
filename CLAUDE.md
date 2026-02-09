@@ -10,6 +10,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 |----------|---------|
 | `docs/ui.md` | UI component standards and date formatting rules |
 | `docs/data-fetching.md` | Data fetching patterns and user data isolation |
+| `docs/data-mutation.md` | Data mutation standards (server actions, validation) |
+| `docs/auth.md` | Authentication standards using Clerk |
 
 Always check these docs before implementing features to ensure consistency across the codebase.
 
